@@ -45,6 +45,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ttxBuscar = new System.Windows.Forms.TextBox();
@@ -53,12 +55,9 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new FontAwesome.Sharp.IconButton();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.parcial01DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosDataGrid)).BeginInit();
@@ -125,7 +124,7 @@
             this.productosDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.productosDataGrid.EnableHeadersVisualStyles = false;
             this.productosDataGrid.GridColor = System.Drawing.Color.SteelBlue;
-            this.productosDataGrid.Location = new System.Drawing.Point(127, 190);
+            this.productosDataGrid.Location = new System.Drawing.Point(133, 190);
             this.productosDataGrid.Name = "productosDataGrid";
             this.productosDataGrid.ReadOnly = true;
             this.productosDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -200,6 +199,20 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Image = global::CapaVista.Properties.Resources.fff;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ReadOnly = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "Eliminar";
+            this.btnEliminar.Image = global::CapaVista.Properties.Resources._3borrar;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,9 +220,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(24, -5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 31);
+            this.label1.Size = new System.Drawing.Size(98, 31);
             this.label1.TabIndex = 3;
-            this.label1.Text = "CRUD Productos";
+            this.label1.Text = "CRUD";
             // 
             // label2
             // 
@@ -243,11 +256,10 @@
             this.groupBox1.Controls.Add(this.ttxBuscar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 12);
+            this.groupBox1.Location = new System.Drawing.Point(199, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(914, 161);
+            this.groupBox1.Size = new System.Drawing.Size(588, 161);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -297,6 +309,29 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Marca:";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
+            this.btnAdd.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnAdd.IconSize = 30;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.Location = new System.Drawing.Point(394, 72);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(179, 32);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "&Agregar Producto";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Editar";
@@ -312,66 +347,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 114;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.HeaderText = "Editar";
-            this.btnEditar.Image = global::CapaVista.Properties.Resources.fff;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.ReadOnly = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "Eliminar";
-            this.btnEliminar.Image = global::CapaVista.Properties.Resources._3borrar;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ReadOnly = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
-            this.btnAdd.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnAdd.IconSize = 30;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(718, 64);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(179, 32);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "&Agregar Producto";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnSearch.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnSearch.IconSize = 30;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(799, 19);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(98, 32);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "&Buscar";
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Visible = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // VerProducto
             // 
@@ -405,7 +380,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ttxBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton btnSearch;
         private FontAwesome.Sharp.IconButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

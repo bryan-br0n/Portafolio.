@@ -243,12 +243,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 49);
+            this.label1.Location = new System.Drawing.Point(13, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 25);
+            this.label1.Size = new System.Drawing.Size(197, 50);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Agregar Registro";
+            this.label1.Text = "Agregar Registro \r\nde Producto";
             // 
             // btnAddProduct
             // 
